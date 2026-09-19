@@ -1,17 +1,26 @@
-# Initial variables and values
-initial_budget = 10000
-changes = (1 + 0.05) * (1 - 0.02) * (1 + 0.1) * (1 - 0.04) * (1 + 0.03) * (1 - 0.01) * (1 + 0.07) * (1 - 0.06) * (1 + 0.02) * (1 - 0.03)
-final_budget = initial_budget * changes
-result = 'blank'
+# Given temperature value
+temperature = 21
+weather_status = 'blank'
+outdoor_advice = 'blank'
 
-# Determine whether the trader made profit, loss, or broke even
-if final_budget > initial_budget:
-    result = "success"
-elif final_budget < initial_budget:
-    result = "fuilure"
-else: 
-    result = "budget unchanged"
+# Determine weather status
+if temperature > 30 :
+    weather_status = "Hot"
+elif 15 <= temperature <= 30:
+    weather_status = "Warm"
+elif 0 <= temperature <= 14:
+    weather_status = "Cool"
+else:
+    weather_status = "Cold"
 
-# Testing
-print("The final budget is:", final_budget)
-print("Result after the trading:", result)
+# Determine outdoor advice
+if  weather_status == "Hot":
+    outdoor_advice = "Stay hydrated"
+elif weather_status == "Warm" and "Cool":
+    outdoor_advice = "Great weather for a walk"
+else :
+    outdoor_advice = "Wear a coat"
+
+# Testing the results
+print("Weather status:", weather_status)
+print("Outdoor advice:", outdoor_advice)
